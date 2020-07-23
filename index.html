@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en"> <!--  it tells the language used for this page by the browser -->
+	<head>
+		    <meta charset="UTF-8"> <!--  characters unicoding -->
+		    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- device compatibility -->
+		  
+			<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+			<style type="text/css">
+				#mytab{
+					border-collapse: collapse;
+				}
+                  
+                  input{
+                  	text-align: center;
+                  	border-style: none;
+                  	outline: none;
+                  	display: inline-block;
+                  	width: 50px;
+                  }
+
+                  td{
+                  	border:1px solid ;
+                  	padding:10px;
+                  }
+
+                  button{
+                  	border: none;
+                    background-color:snow;
+                    font-size: 30px;
+                  }
+
+			</style>
+	</head>
+
+	<script type="text/javascript">
+		
+	</script>
+
+	<body>
+
+      	<table id="mytab" border="1px solid"  align="center">
+
+      		<tr>
+      			<td>S.N</td>
+      			<td>COL1</td>
+      			<td>COL2</td>
+      			<td>COL1 + COL2</td>
+      			<td><button id="add">+</button><span style="font-size: 30px;">|</span><button id="sub">-</button></td>
+      		</tr>
+      		<tr>
+
+      			<td>1</td>
+      			<td class="inp"><input type="text" value="5" name=""></td>
+      			<td class="inp"><input type="text" value="10" name=""></td>
+      			<td>15</td>
+      			<td></td>
+
+      		</tr>
+      		<tr>
+      			<td>2</td>
+      			<td class="inp"><input type="text" value="34" name=""></td>
+      			<td class="inp"><input type="text" value="9"  name=""></td>
+      			<td>43</td>
+      			<td></td>
+
+      		</tr>
+      		<tr>
+      			<td>3</td>
+      			<td class="inp"><input type="text" name=""></td>
+      			<td class="inp"><input type="text" name=""></td>
+      			<td></td>
+      			<td></td>
+
+      		</tr>
+     
+      	</table>
+
+    <script type="text/javascript">
+          
+          var addBtn = document.getElementById("add");
+          var subBtn = document.getElementById("sub");
+          var table = document.getElementById("mytab");
+          
+    	  addBtn.addEventListener('click' , function(){
+            
+           var countRows = table.rows.length;
+           console.log(countRows);
+
+           var row = table.insertRow(countRows);
+
+           var cell1 = row.insertCell(0);
+           var cell2 = row.insertCell(1);
+           var x1 = document.createElement("input");
+           cell2.appendChild(x1);
+           var cell3 = row.insertCell(2);
+           var x2 = document.createElement("input");
+           cell3.appendChild(x2);
+           var cell4 = row.insertCell(3);
+           var cell5 = row.insertCell(4);
+          // console.log(table);
+
+    	  } );
+       
+          subBtn.addEventListener('click',function subtract(){
+           
+           var countRows = table.rows.length;
+           console.log(countRows);
+
+           var row = table.deleteRow(countRows-1);
+           countRows--;
+          
+    	  } ) ;
+    </script>
+
+    </body>	
+</html>
